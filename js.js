@@ -3,24 +3,38 @@ var chars = '';
 //Ready
 $(function(){
 	$('#keyChooser td').click(keysetClicked);
-	$('input[placeholder="custom"]').focus()
-	$('button[begin]').click(
-		function() {
-			selectedLists.forEach(function(key){
-				if (charlists[key])
-					chars = chars + charlists[key];
-				else if (key === 'C')
-					chars += $('[type="C"] input').val();
-			});
-			var text = '';
-			for (var i = 0; i < 200; i++) {
-				text += getChar();
-			}
-			$('#feed').val(text);
-			$('#input').val('');
-			$('#input').focus();
+	
+	$('button[begin]').click(function() {
+		selectedLists.forEach(function(key){
+			if (charlists[key])
+				chars = chars + charlists[key];
+			else if (key === 'C')
+				chars += $('[type="C"] input').val();
+		});
+		var text = '';
+		for (var i = 0; i < 200; i++) {
+			text += getChar();
 		}
-	);
+		$('#feed').val(text);
+		$('#input').val('');
+		$('#input').focus();
+	});
+
+	$('#input').keyup(function(){
+		var text = $(this).val();
+
+		if (text.length > 40) {
+			var spliceLength = text.length-40;
+			
+			text = text.substr(spliceLength);
+
+			var feed = $('#feed').val().substr(spliceLength);
+
+			$('#input').val(text);
+			$('#feed').val(feed);
+		}
+	});
+
 	$('button[finish]').click(
 		function() {
 

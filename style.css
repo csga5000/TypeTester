@@ -1,0 +1,114 @@
+@font-face {
+    font-family: Fairview;
+    src: url(Fairview_Regular.otf);
+    font-weight:400;
+}
+
+@font-face {
+    font-family: ONRAMP;
+    src: url(ONRAMP.ttf);
+    font-weight:100;
+}
+
+body{
+	background-color: #222266;
+}
+
+body, button {
+	font-family: ONRAMP, calibri;
+	font-size: 32px;
+}
+
+input, td {
+	font-family: Fairview, calibri;
+	font-size: 28px;
+}
+
+input {
+	letter-spacing: 3px;
+}
+
+p {
+	padding: 10px 0px 10px 0px;
+	margin: 0px;
+}
+
+input {
+	width:100%;
+	padding:5px;
+	padding-left: 15px;
+	background-color: #ccf;
+	border: 2px solid #99d;
+}
+
+.btn {
+	background-color: #fff;
+	border: 2px solid #aaa;
+	padding:5px 10px 5px 10px;
+}
+.btn-green {
+	background-color: #4b4;
+	border: 2px solid #292;
+	color: white;
+}
+.btn-green:active {
+	background-color: #292;
+	border: 2px solid #4b4;
+}
+.btn-red {
+	background-color: #c22;
+	border: 2px solid #a00;
+	color: white;
+}
+.btn-red:active {
+	background-color: #a00;
+	border: 2px solid #c22;
+}
+
+#content {
+	width:750px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #99d;
+	padding:15px;
+}
+
+#keyChooser {
+	border-spacing: 1px;
+}
+
+#keyChooser td {
+	text-align: center;
+	padding: 5px;
+	width: 50%;
+	/*border: 3px solid #444444;*/
+	background-color: #ccf;
+}
+
+#keyChooser td, #feed {
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#keyChooser td:focus{
+	outline: none;
+}
+
+#keyChooser td.selected{
+	margin: 0px;
+	text-align: center;
+	padding: 5px;
+	width: 50%;
+	/*border: 3px solid #5555BB;*/
+	background-color: #55b;
+}
+td input {
+	border:none;
+	padding:none;
+	text-align: center;
+	box-sizing: border-box;
+}

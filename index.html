@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Type Tester</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script src="jquery-2.1.1.min.js"></script>
+	<script src="js.js"></script>
+	
+</head>
+<body>
+	<div id="content">
+		<p>Select Keysets</p>
+		<table id="keyChooser" width="100%">
+			<tbody>
+				<tr>
+					<td type="a">Letters(a-Z )</td>
+					<td type="0">Numbers(0-1)</td>
+				</tr>
+				<tr>
+					<td type=",">Punctation(.,?'"!;:)</td>
+					<td type="+">Operators(+-*/=)</td>
+				</tr>
+				<tr>
+					<td type="$">Other Characters</td>
+					<td type="C"><input type="text" placeholder="Custom"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Write this:</p>
+		<input type="text" id="feed" disabled>
+		<p>Here:</p>
+		<input type="text" id="input" name="input">
+		
+		<br><br>
+
+		<button class="btn btn-green" begin>Begin</button>
+		<button class="btn btn-red" finish>Finish</button>
+
+		<p>Note! Timer starts with first key and ends with last</p>
+		<p>Mistakes count as -3 characters</p>
+
+	</div>
+</body>
+</html>

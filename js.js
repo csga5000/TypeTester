@@ -5,6 +5,7 @@ $(function(){
 	$('#keyChooser td').click(keysetClicked);
 	
 	$('button[begin]').click(function() {
+		chars = '';
 		selectedLists.forEach(function(key){
 			if (charlists[key])
 				chars = chars + charlists[key];
@@ -25,10 +26,14 @@ $(function(){
 
 		if (text.length > 40) {
 			var spliceLength = text.length-40;
-			
+
 			text = text.substr(spliceLength);
 
 			var feed = $('#feed').val().substr(spliceLength);
+
+			while (feed.length < 100) {
+				feed = feed + getChar();
+			}
 
 			$('#input').val(text);
 			$('#feed').val(feed);
@@ -50,8 +55,8 @@ var charlists = {
 	'a': ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
 	'0': '0123456789',
 	',': '.,?\'"!:;',
-	'+': '+-*/=<>',
-	'$': '@#`~$%^&(){}[]\\|/'
+	'+': '+-*/=',
+	'$': '@#`~$%^&(){}[]\\|/<>'
 };
 
 var selectedLists = [];
